@@ -31,9 +31,9 @@ class ClockServiceTest {
     static Stream<Arguments> getTestdata() {
         final var zoneOffset = ZONE_ID.getRules().getOffset(LocalDateTime.now(ZONE_ID));
         return Stream.of(
-                arguments(OffsetTime.of(0, 0, 0, 0, zoneOffset), " zwölf"),
-                arguments(OffsetTime.of(12, 0, 0, 0, zoneOffset), " zwölf"),
-                arguments(OffsetTime.of(13, 0, 0, 0, zoneOffset), " eins"),
+                arguments(OffsetTime.of(0, 0, 0, 0, zoneOffset), "zwölf"),
+                arguments(OffsetTime.of(12, 0, 0, 0, zoneOffset), "zwölf"),
+                arguments(OffsetTime.of(13, 0, 0, 0, zoneOffset), "eins"),
                 arguments(OffsetTime.of(2, 5, 0, 0, zoneOffset), "fünf nach zwei"),
                 arguments(OffsetTime.of(3, 10, 0, 0, zoneOffset), "zehn nach drei"),
                 arguments(OffsetTime.of(16, 15, 0, 0, zoneOffset), "viertel nach vier"),

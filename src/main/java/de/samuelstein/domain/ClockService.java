@@ -8,6 +8,9 @@ import java.util.Locale;
 import java.util.NavigableMap;
 import java.util.ResourceBundle;
 import java.util.TreeMap;
+import java.util.function.Predicate;
+import java.util.stream.Collectors;
+import java.util.stream.Stream;
 
 public class ClockService {
     private final ZoneId zoneId;
@@ -29,7 +32,9 @@ public class ClockService {
     public String getTimeAsString() {
         final var now = OffsetTime.now(zoneId);
 
-        return String.format("%s %s", getMinutesAsString(now.getMinute()), getHourAsString(now.getHour(), now.getMinute()));
+        return Stream.of(getMinutesAsString(now.getMinute()), getHourAsString(now.getHour(), now.getMinute()))
+                .filter(Predicate.not(String::isBlank))
+                .collect(Collectors.joining(" "));
     }
 
     private String getHourAsString(final int hour, final int minute) {
