@@ -42,7 +42,7 @@ class ClockServiceTest {
                 arguments(OffsetTime.of(18, 30, 0, 0, zoneOffset), "halb sieben"),
                 arguments(OffsetTime.of(18, 35, 0, 0, zoneOffset), "fünf nach halb sieben"),
                 arguments(OffsetTime.of(18, 40, 0, 0, zoneOffset), "zehn nach halb sieben"),
-                arguments(OffsetTime.of(19, 45, 0, 0, zoneOffset), "dreiviertel acht"),
+                arguments(OffsetTime.of(19, 45, 0, 0, zoneOffset), "viertel vor acht"),
                 arguments(OffsetTime.of(19, 50, 0, 0, zoneOffset), "zehn vor acht"),
                 arguments(OffsetTime.of(19, 55, 0, 0, zoneOffset), "fünf vor acht"));
     }
